@@ -22,20 +22,33 @@
                 <li>🚫 Aucun changement ne sera possible après la soumission.</li>
             </ul>
         </div>
-        
 
         <form id="voteForm">
             <div class="form-group">
                 <label for="studentEmail">Email étudiant *</label>
-                <input type="email" id="studentEmail" placeholder="ex: example@2028.ulc-icam.com" readonly>
+
                 <div id="g_id_onload"
                     data-client_id="411737484438-ooj7ggossuv6g8lrttgjofktimjakgrs.apps.googleusercontent.com"
                     data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
-                    data-auto_prompt="false">
+                    data-auto_prompt="true">
                 </div>
 
-                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"
-                    data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
+                <div class="email-row">
+                    <input type="email" id="studentEmail" placeholder="ex: example@2028.ulc-icam.com" readonly>
+                    <div class="reload-box">
+                        <img src="close.svg" alt="reload icon" class="reload-icon" id="reloadIcon">
+                    </div>
+                </div>
+
+                <div class="connect-btn">
+
+                    <div class="g_id_signin" data-size="large" data-theme="outline" data-text="continue_with"
+                        data-shape="rectangular" data-logo_alignment="left" id="googleSignInBtn">
+                    </div>
+
+                    <div class="email-loader" id="emailLoader">
+                        <div class="spinner"></div>
+                    </div>
                 </div>
             </div>
 
@@ -55,13 +68,8 @@
         <div class="loader-overlay" id="formLoader">
             <div class="loader"></div>
         </div>
-        
-        <div id="confirmation" class="confirmation">
-            <h2>✅ Merci pour votre vote !</h2>
-            <p>Votre participation a été enregistrée avec succès.</p>
-        </div>
-        
 
+        <div id="confirmation" class="confirmation"></div>
     </div>
 
     <script src="script.js"></script>
