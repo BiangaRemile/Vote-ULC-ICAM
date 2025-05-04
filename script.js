@@ -88,7 +88,8 @@ async function sendVote(userInfo, candidate) {
 
 
     } catch (error) {
-        console.error("Erreur lors de l'envoi du vote :", error);
+        console.error(error);
+        loaderOverlay.style.display = "none"; // Masquer le loader
         alert("Une erreur est survenue lors de l'envoi du vote. Veuillez réessayer.");
     }
 }
