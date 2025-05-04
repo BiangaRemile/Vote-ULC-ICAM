@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Élections BDE ULC-ICAM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="vote-container">
+        <h1>Élections BDE ULC-ICAM</h1>
+
+        <div class="form-info">
+            <p>
+                Ce formulaire vous permet de voter pour l'équipe BDE de votre choix.
+            </p>
+            <ul>
+                <li>🗳️ Un seul vote est autorisé par étudiant.</li>
+                <li>✅ Veuillez bien relire votre choix avant de soumettre.</li>
+                <li>🚫 Aucun changement ne sera possible après la soumission.</li>
+            </ul>
+        </div>
+        
+
+        <form id="voteForm">
+            <div class="form-group">
+                <label for="studentEmail">Email étudiant *</label>
+                <input type="email" id="studentEmail" placeholder="ex: example@2028.ulc-icam.com" readonly>
+                <div id="g_id_onload"
+                    data-client_id="411737484438-ooj7ggossuv6g8lrttgjofktimjakgrs.apps.googleusercontent.com"
+                    data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
+                    data-auto_prompt="false">
+                </div>
+
+                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"
+                    data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="candidate">Candidat choisi *</label>
+                <select id="candidate" required>
+                    <option value="" disabled selected>Select an option ...</option>
+                    <option value="Béni Nkulu">Béni Nkulu X2</option>
+                    <option value="Justice Musau">Justice Musau X1</option>
+                    <option value="Gloire Nkulu">Gloire Nkulu XP</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Soumettre</button>
+        </form>
+
+        <div class="loader-overlay" id="formLoader">
+            <div class="loader"></div>
+        </div>
+        
+        <div id="confirmation" class="confirmation">
+            <h2>✅ Merci pour votre vote !</h2>
+            <p>Votre participation a été enregistrée avec succès.</p>
+        </div>
+        
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+
+</html>
+
+<!-- 411737484438-ja2o89dtpj044ib4pcfte3hr3dk8drvk.apps.googleusercontent.com -->
