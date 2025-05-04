@@ -44,7 +44,7 @@ document.getElementById('voteForm').addEventListener('submit', function (e) {
 const loaderOverlay = document.getElementById('formLoader');
 
 async function sendVote(userInfo, candidate) {
-    const webhookURL = "https://analystic.app.n8n.cloud/webhook-test/921dbf3d-1762-4f59-92ce-97f13f07674c";
+    const webhookURL = "https://analystic.app.n8n.cloud/webhook/921dbf3d-1762-4f59-92ce-97f13f07674c";
 
     try {
 
