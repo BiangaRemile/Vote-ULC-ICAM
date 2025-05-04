@@ -70,11 +70,16 @@ async function sendVote(userInfo, candidate) {
 
         loaderOverlay.style.display = "none"; // Masquer le loader
 
-        if (data.success) {
+        if (data.success && !data.error) {
             document.getElementById('confirmation').innerHTML = `<h2>✅ Merci pour votre vote !</h2>
             <p>Votre participation a été enregistrée avec succès.</p>`;
         }
-        else {
+        else if (data.error) {
+            document.getElementById('confirmation').innerHTML = `<h2>❌ Accès non autorisé</h2>
+            <p>Votre adresse e-mail n’est pas reconnue comme une adresse étudiante valide de l’ICAM.</p>
+            <p>Si vous pensez qu’il s’agit d’une erreur, veuillez contacter le service des élections étudiantes ou le responsable BDE.</p>`;
+        }
+        else{
             document.getElementById('confirmation').innerHTML = `<h2>📌 Vote déjà enregistré</h2>
             <p>Notre système indique que vous avez déjà participé au vote.</p>
             <p>🗳️ Un seul vote est autorisé par étudiant, conformément aux règles de l’élection.</p>
